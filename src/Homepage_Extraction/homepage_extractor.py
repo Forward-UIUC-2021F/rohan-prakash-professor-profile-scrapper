@@ -4,13 +4,13 @@ import pprint
 import pickle
 
 def load_model():
-    RF_MODEL = 'Forward_Data_Lab_Education_Today/V2/Homepage_Extraction/Models/text_classifier'
-    SVM_MODEL = 'V2/Homepage_Extraction/Models/scikit_learn_sgd'
-    SGD_MODEL = 'V2/Homepage_Extraction/Models/scikit_learn_svm'
+    RF_MODEL = 'rohan-prakash-professor-profile-scrapper/src/Homepage_Extraction/Models/text_classifier'
+    SVM_MODEL = 'src/Homepage_Extraction/Models/scikit_learn_sgd'
+    SGD_MODEL = 'src/Homepage_Extraction/Models/scikit_learn_svm'
     with open(SVM_MODEL, 'rb') as training_model:
         model = pickle.load(training_model)
 
-    with open('V2/Homepage_Extraction/Models/vectorizer', 'rb') as vect:
+    with open('src/Homepage_Extraction/Models/vectorizer', 'rb') as vect:
         tfidf_vect = pickle.load(vect)
     return model, tfidf_vect
 
