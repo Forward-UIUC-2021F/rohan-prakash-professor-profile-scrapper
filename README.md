@@ -14,3 +14,26 @@ pip install -r requirements
 To find papers by keyword, use this module either as command-line utility or a library
 ### Using as a command-line utility
 1) We will run data_main.py
+
+
+
+## Project Structure
+```
+rohan-prakash-professor-profile-scrapper/
+  - requirements.txt
+  - data/
+    - 898 labeled_profile .txt files
+  - src/
+    - find_papers.py
+    - store_papers.py
+    - find_paper_by_keyword/
+      - assign_paper_keywords.py
+      - database.py
+      - embeddings_generator.py
+      - paper_indexer.py
+      - rank_papers.py
+      - utils.py
+    - fild_readers/
+      - keyword_file_reader.py
+      - paper_file_reader.py
+```
