@@ -96,3 +96,12 @@ Following this each url is then scrapped and mined for pertenant information tha
 
 In the final stage we aim to reduce overlapping information for better data management. This is currently carried out through sentence similarty using SentenceTransformers. This can be improved as it is a trivial module at current stage.
 
+## References
+
+Some useful references stem from 'A Combination Approach to Web User Profiling'
+
+- http://keg.cs.tsinghua.edu.cn/jietang/publications/TKDD11-Tang-et-al-web-user-profiling.pdf
+
+They have suggested the use of TCRF for this problem and linked aminer.org as a very similar problem, where they used the TCRF model. Below is a webpage used to store the training data for the model used.
+
+-https://www.aminer.org/lab-datasets/profiling/index.html
