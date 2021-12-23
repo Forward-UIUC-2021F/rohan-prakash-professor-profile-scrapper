@@ -2,4 +2,4 @@ data/
 readme_help.txt
 .DS_store
 
-__pycache__
+!**/__pycache__/
