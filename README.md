@@ -104,4 +104,4 @@ Some useful references stem from 'A Combination Approach to Web User Profiling'
 
 They have suggested the use of TCRF for this problem and linked aminer.org as a very similar problem, where they used the TCRF model. Below is a webpage used to store the training data for the model used.
 
--https://www.aminer.org/lab-datasets/profiling/index.html
+- https://www.aminer.org/lab-datasets/profiling/index.html
