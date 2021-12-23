@@ -9,6 +9,7 @@ def search_professor(prof_tuple):
     professor_page_list = homepage_finder(prof_tuple)
     print(professor_page_list, "\n")
     # Module 2
+    # Latest Iteration works to use TCRF model for extract_homepage function
     for url in professor_page_list:
         data_store.append(extract_homepage(url))
     # Module 3
@@ -27,7 +28,6 @@ if __name__ == '__main__':
 
         print("Data for ", p_name, '\n')
         test_tup = (p_name, p_institution)
-        #test_tup = ("Kevin Chenchuan Chang", "University of Illinois Urbana-Champaign")
 
         # This single line runs the entire pipeline. Goes from scrapping to classifying to merging and returns.
         db_data = search_professor(test_tup)
