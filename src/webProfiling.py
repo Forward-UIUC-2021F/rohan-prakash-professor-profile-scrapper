@@ -13,33 +13,6 @@ import torch
 from torch import nn
 
 
-# class TCRF(nn.Module):
-#     '''
-#     Tree-related Conditional Random Field (TCRF).
-
-#     Args:
-#         nb_labels (int): number of labels in your tagset, including special symbols.
-#         bos_tag_id (int): integer representing the beginning of sentence symbol in
-#             your tagset.
-#         eos_tag_id (int): integer representing the end of sentence symbol in your tagset.
-#         batch_first (bool): Whether the first dimension represents the batch dimension.
-#     '''
-#     def __init__(self, nb_labels, bos_tag_id, eos_tag_id, batch_first=True) -> None:
-#         super().__init__()
-
-#         self.nb_labels = nb_labels
-#         self.BOS_TAG_ID = bos_tag_id
-#         self.EOS_TAG_ID = eos_tag_id
-#         self.batch_first = batch_first
-
-#         self.transitions = nn.Parameter(torch.empty(self.nb_labels, self.nb_labels))
-#         self.init_weights()
-
-#     def init_weights(self):
-#         pass
-
-
-
 class CRF(nn.Module):
     """
     Linear-chain Conditional Random Field (CRF).

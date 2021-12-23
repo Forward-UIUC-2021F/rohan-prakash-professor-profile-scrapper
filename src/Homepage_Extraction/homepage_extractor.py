@@ -7,9 +7,12 @@ def load_model():
     RF_MODEL = 'rohan-prakash-professor-profile-scrapper/src/Homepage_Extraction/Models/text_classifier'
     SVM_MODEL = 'src/Homepage_Extraction/Models/scikit_learn_sgd'
     SGD_MODEL = 'src/Homepage_Extraction/Models/scikit_learn_svm'
+    TCRF_MODEL = ''
+
+    # Load Model
     with open(SVM_MODEL, 'rb') as training_model:
         model = pickle.load(training_model)
-
+    # Load Vectorizer
     with open('src/Homepage_Extraction/Models/vectorizer', 'rb') as vect:
         tfidf_vect = pickle.load(vect)
     return model, tfidf_vect
@@ -38,15 +41,10 @@ def extract_homepage(homepage_url):
     # Load both models
     model, vector = load_model()
     # Make predictions
-    test_vec = data#vector.transform(data)
-    #print(test_vec)
+    test_vec = data 
     prediction = model.predict(test_vec)
 
     res = list(map(int, prediction.tolist()))
-    # for i in range(1, len(res) - 1):
-    #     if res[i] == 0:
-    #         if res[i - 1] == res[i + 1] and res[i - 1] in [1, 2, 3, 4]:
-    #             res[i] = res[i - 1]
 
     for i in range(len(data)):
         # New curated implementation stores and returns in a dictionary with data criterion/mode as keys
@@ -56,9 +54,8 @@ def extract_homepage(homepage_url):
     return data_dic
 
 if __name__ == '__main__':
-    test_url = "https://cs.illinois.edu/about/people/faculty/kcchang"
-    test_url2 = "http://www.forwarddatalab.org/kevinccchang"
-    res = extract_homepage(test_url2)
+    test_url = "http://www.forwarddatalab.org/kevinccchang"
+    res = extract_homepage(test_url)
     DATA_TOPICS = ['edu', 'bio', 'research', 'award']
 
     for x in DATA_TOPICS:

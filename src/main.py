@@ -33,6 +33,5 @@ if __name__ == '__main__':
         db_data = search_professor(test_tup)
 
         pprint.pprint(db_data)
-        # for dic in data_store:
-        #     pprint.pprint(dic)
+
         print("---------------WEBSITE END-----------------")

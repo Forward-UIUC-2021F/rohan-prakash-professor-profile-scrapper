@@ -11,7 +11,8 @@ from sklearn.linear_model import SGDClassifier
 from sklearn.svm import SVC
 
 # load the dataset
-data = open('V2/Homepage_Extraction/corpus').read()
+data = open('rohan-prakash-professor-profile-scrapper/src/Homepage_Extraction/corpus').read()
+
 labels, texts = [], []
 for i, line in enumerate(data.split("\n")):
     content = line.split()
@@ -115,49 +116,3 @@ with open('V2/Homepage_Extraction/Models/scikit_learn_sgd', 'wb') as f:
     
 with open('V2/Homepage_Extraction/Models/scikit_learn_svm', 'wb') as f:
     pickle.dump(svc_pipe, f)
-
-
-
-
-# # label encode the target variable
-# encoder = preprocessing.LabelEncoder()
-# train_y = encoder.fit_transform(train_y)
-# test_y = encoder.fit_transform(test_y)
-
-# # word level tf-idf
-# TFIDF = TfidfVectorizer(analyzer='word', token_pattern=r'\w{1,}')
-# TFIDF.fit(trainDF['text'])
-# train_fe = TFIDF.transform(train_x)
-# test_fe = TFIDF.transform(test_x)
-
-
-# # print(TFIDF.vocabulary_)
-
-
-# def train_model(classifier, feature_vector_train, label, feature_vector_valid):
-#     # fit the training dataset on the classifier
-#     rf = classifier.fit(feature_vector_train, label)
-
-#     # predict the labels on validation dataset
-#     predictions = classifier.predict(feature_vector_valid)
-
-#     return metrics.accuracy_score(predictions, test_y), rf, predictions
-
-
-# # RF on Word Level TF IDF Vectors
-# accuracy, classifier, prediction = train_model(ensemble.RandomForestClassifier(), train_fe, train_y, test_fe)
-# print("RF, WordLevel TF-IDF: ", accuracy)
-
-# print(confusion_matrix(prediction, test_y))
-# print(classification_report(prediction, test_y))
-# print(accuracy_score(prediction, test_y))
-
-# Save classification model and vectorizer model
-
-# with open('Models/text_classifier', 'wb') as picklefile:
-#     pickle.dump(classifier, picklefile)
-
-# with open('Models/vectorizer', 'wb') as picklefile:
-#     pickle.dump(TFIDF, picklefile)
-
-
