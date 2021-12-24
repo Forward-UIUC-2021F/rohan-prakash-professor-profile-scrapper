@@ -20,6 +20,10 @@ To find professor profile information, use command line to search a professor.
 3) Finally it will present the data merged together, each is labeled with category of data (ex. Bio, awards)
 
 
+## Demo Video
+[![Watch the video](https://img.youtube.com/vi/WGXxiZHNU70/maxresdefault.jpg)](https://youtu.be/WGXxiZHNU70)
+
+
 ## Project Structure
 ```
 rohan-prakash-professor-profile-scrapper/
