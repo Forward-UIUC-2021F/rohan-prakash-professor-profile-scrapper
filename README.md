@@ -25,7 +25,7 @@ To find professor profile information, use command line to search a professor.
 rohan-prakash-professor-profile-scrapper/
   - requirements.txt
   - data/
-    - 898 labeled_profile .txt files
+    - 898 labeled homepage html .txt files
   - src/
     - main.py
     - webProfiling.py
@@ -48,7 +48,7 @@ rohan-prakash-professor-profile-scrapper/
         - consolidate_data.py
 ```
 
-* `data/898_files`: This folder of 900 labeled profile webpages is used to train TCRF model for homepage extraction
+* `data/`: This folder of 898 labeled profile webpages is used to train TCRF model for homepage extraction
 * `src/`: Contains all module code for homepage finding, exraction, and consolidation; focus on extraction for this iteration.
     * `src/main.py`: The driver for the professor search and scrapping pipeline. Connects modules together into search pipeline.
     *  `src/webProfiling.py`: This should be moved into src/homepage_extraction once a model may be trained and generated for use. This is CRF based extraction implementation attempt.
@@ -95,6 +95,20 @@ We begin by looking for possible homepage urls on google, these are likely to be
 Following this each url is then scrapped and mined for pertenant information that fits into 4 data categories. This is where nlp models are used, in particular the TCRF works the most effectively as it takes into account the html tree structure that most homepage's fit into. Once data it is extracted it moves onto consolidation.
 
 In the final stage we aim to reduce overlapping information for better data management. This is currently carried out through sentence similarty using SentenceTransformers. This can be improved as it is a trivial module at current stage.
+
+## Issues and Future Work
+Despite spending the last 2 weeks of Fall iteration of EduToday, I was unable to upgrade my profile extraction model to leverage a TCRF model to mine and classify professor information. It took me time to learn the concept but I got stuck training the general CRF implementation in order to obtain a TCRF connection structure.
+
+- Initializing and training CRF model with files in `data/` (downloaded from aminer/datasets link below)
+- Configuring CRF initialization function in `src/webProfiling.py` to create parent-child connections as well as child-child connections
+- Applying the newly trained TCRF model for classification
+
+Additional work on Homepage finding and Data consolidation include the following
+
+- If I had more time I would refine Homepage finding to check if headings in html indicate it is homepage
+- Better way to reduce redundant information from multiple homepage scrapes
+- Possibly use senetence similarity checking to summarize data
+
 
 ## References
 

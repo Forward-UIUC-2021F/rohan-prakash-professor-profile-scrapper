@@ -7,11 +7,12 @@ def search_professor(prof_tuple):
     data_store = []
     # Module 1
     professor_page_list = homepage_finder(prof_tuple)
-    print(professor_page_list, "\n")
+
     # Module 2
     # Latest Iteration works to use TCRF model for extract_homepage function
     for url in professor_page_list:
         data_store.append(extract_homepage(url))
+        
     # Module 3
     db_data_dic = consolidate_data(data_store=data_store)
 
